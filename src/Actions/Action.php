@@ -91,6 +91,27 @@ class Action implements JsonSerializable
     public static $chunkCount = 200;
 
     /**
+     * The text to be used for the action's confirm button.
+     *
+     * @var string
+     */
+    public $confirmButtonText = 'Run Action';
+
+    /**
+     * The text to be used for the action's cancel button.
+     *
+     * @var string
+     */
+    public $cancelButtonText = 'Cancel';
+
+    /**
+     * The text to be used for the action's confirmation text.
+     *
+     * @var string
+     */
+    public $confirmText = 'Are you sure you want to run this action?';
+
+    /**
      * Determine if the action is executable for the given request.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -378,6 +399,9 @@ class Action implements JsonSerializable
             'onlyOnDetail' => $this->onlyOnDetail,
             'onlyOnIndex' => $this->onlyOnIndex,
             'withoutConfirmation' => $this->withoutConfirmation,
+            'cancelButtonText' => __($this->cancelButtonText),
+            'confirmButtonText' => __($this->confirmButtonText),
+            'confirmText' => __($this->confirmText),
         ], $this->meta());
     }
 }
