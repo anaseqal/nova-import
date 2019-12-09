@@ -127,7 +127,7 @@ public function actions(Request $request)
 
 
 
-Action Name must use the Format of `Import{ResoueceName}`, for example `ImportUsers` or `ImportCountries`.
+Action Name must use the Format of `Import{ResourceName}`, for example `ImportUsers` or `ImportCountries`.
 
 Please note that it extends `Anaseqal\NovaImport\Actions\Action` not normal Nova Actions because it doesn't applies on models!
 
