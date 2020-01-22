@@ -42,7 +42,7 @@ To use this tool, you need to create two things:
 namespace App\Nova\Actions;
 
 use Illuminate\Bus\Queueable;
-use Anaseqal\NovaImport\Actions\Action;
+use Laravel\Nova\Actions\Action;
 use Illuminate\Support\Collection;
 use Laravel\Nova\Fields\ActionFields;
 use Illuminate\Queue\SerializesModels;
