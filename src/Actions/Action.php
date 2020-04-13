@@ -167,6 +167,23 @@ class Action implements JsonSerializable
     }
 
     /**
+     * Return a Vue router response from the action.
+     *
+     * @param  string  $path
+     * @param  array  $query
+     * @return array
+     */
+    public static function push($path, $query = [])
+    {
+        return [
+            'push' => [
+                'path' => $path,
+                'query' => $query,
+            ],
+        ];
+    }
+
+    /**
      * Return an open new tab response from the action.
      *
      * @param  string  $url

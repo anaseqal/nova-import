@@ -197,6 +197,8 @@ export default {
                 document.body.removeChild(link)
             } else if (response.redirect) {
                 window.location = response.redirect
+            } else if (response.push) {
+              this.$router.push(response.push).catch(err => { this.$router.go() })
             } else if (response.openInNewTab) {
                 window.open(response.openInNewTab, '_blank')
             } else {
