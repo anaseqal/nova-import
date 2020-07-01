@@ -8,7 +8,7 @@
             class="btn btn-default btn-primary"
             :title="__('Run Import Action')"
         >
-            <span>{{ __('Import' . ' ' . resourceInformation.label) }}</span>
+            <span>{{ __('Import' + ' ' + resourceInformation.uriKey) }}</span>
         </button>
 
         <!-- Action Confirmation Modal -->
