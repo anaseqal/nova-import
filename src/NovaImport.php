@@ -17,6 +17,4 @@ class NovaImport extends Tool
         Nova::script('nova-import', __DIR__.'/../dist/js/tool.js');
         Nova::style('nova-import', __DIR__.'/../dist/css/tool.css');
     }
-
-    
 }
