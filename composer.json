@@ -1,8 +1,9 @@
 {
     "name": "anaseqal/nova-import",
-    "description": "A Laravel Nova tool.",
+    "description": "A Laravel Nova import tool.",
     "keywords": [
         "laravel",
+        "import",
         "nova"
     ],
     "license": "MIT",

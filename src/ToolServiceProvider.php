@@ -15,8 +15,6 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-
         $this->app->booted(function () {
 
         });
@@ -25,8 +23,6 @@ class ToolServiceProvider extends ServiceProvider
             //
         });
     }
-
-    
 
     /**
      * Register any application services.

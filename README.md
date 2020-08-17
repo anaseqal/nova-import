@@ -2,7 +2,7 @@
 
 Import data to resources.
 
-![screenshot](https://i.imgur.com/szKmLGf.gif)
+![Screenshot](https://i.imgur.com/szKmLGf.gif)
 
 ## Installation
 
@@ -12,19 +12,20 @@ You can install the package in to a Laravel app that uses [Nova](https://nova.la
 composer require anaseqal/nova-import
 ```
 
-Register the tool in `NovaServiceProvider`:
+Register the tool in your `app/Providers/NovaServiceProvider.php`:
 
 ```php
 use Anaseqal\NovaImport\NovaImport;
-...
+
+// ...
 
 public function tools()
-    {
-        return [
-            new NovaImport,
-            ...
-        ];
-    }
+{
+    return [
+        new NovaImport,
+        // ...
+    ];
+}
 
 ```
 
@@ -63,15 +64,15 @@ class ImportUsers extends Action
      * @var bool
      */
     public $onlyOnIndex = true;
-    
+
     /**
-	 * Get the displayable name of the action.
-	 *
-	 * @return string
-	 */
-	public function name() {
-		return __('Import Users');
-	}
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name() {
+        return __('Import Users');
+    }
 
     /**
      * @return string
@@ -90,6 +91,7 @@ class ImportUsers extends Action
     public function handle(ActionFields $fields)
     {
         Excel::import(new UsersImport, $fields->file);
+
         return Action::message('It worked!');
     }
 
@@ -106,7 +108,6 @@ class ImportUsers extends Action
         ];
     }
 }
-
 ```
 
 3. Register the action into your resource:
@@ -125,16 +126,11 @@ public function actions(Request $request)
 
 ```
 
-
-
 Action Name must use the Format of `Import{ResourceName}`, for example `ImportUsers` or `ImportCountries`.
 
 Please note that it extends `Anaseqal\NovaImport\Actions\Action` not normal Nova Actions because it doesn't applies on models!
 
 
-
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
-
-
