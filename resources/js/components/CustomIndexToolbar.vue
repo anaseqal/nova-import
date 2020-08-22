@@ -87,6 +87,11 @@ export default {
     },
 
     methods: {
+
+        refreshResource() {
+            this.$parent.$parent.getResources()
+        },
+
         /**
          * Get the actions available for the current resource.
          */
@@ -152,6 +157,7 @@ export default {
                     this.confirmActionModalOpened = false
                     this.handleActionResponse(response.data)
                     this.working = false
+                    this.refreshResource()
                 })
                 .catch(error => {
                     this.working = false
@@ -186,7 +192,7 @@ export default {
                 this.$emit('actionExecuted')
             } else if (response.danger) {
                 this.$emit('actionExecuted')
-                this.$toasted.show(response.danger, { type: 'error' })
+                this.$toasted.show(response.message, { type: 'error' })
             } else if (response.download) {
                 let link = document.createElement('a')
                 link.href = response.download
