@@ -164,6 +164,7 @@ export default {
 
                     if (error.response.status == 422) {
                         this.errors = new Errors(error.response.data.errors)
+                        this.$toasted.show(this.__('There was a problem executing the action.'), { type: 'error' })
                     }
                 })
         },
