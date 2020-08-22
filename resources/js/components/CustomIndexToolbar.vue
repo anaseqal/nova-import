@@ -192,7 +192,7 @@ export default {
                 this.$emit('actionExecuted')
             } else if (response.danger) {
                 this.$emit('actionExecuted')
-                this.$toasted.show(response.message, { type: 'error' })
+                this.$toasted.show(response.danger, { type: 'error' })
             } else if (response.download) {
                 let link = document.createElement('a')
                 link.href = response.download
