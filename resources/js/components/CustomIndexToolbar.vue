@@ -87,6 +87,11 @@ export default {
     },
 
     methods: {
+
+        refreshResource() {
+            this.$parent.$parent.getResources()
+        },
+
         /**
          * Get the actions available for the current resource.
          */
@@ -152,12 +157,14 @@ export default {
                     this.confirmActionModalOpened = false
                     this.handleActionResponse(response.data)
                     this.working = false
+                    this.refreshResource()
                 })
                 .catch(error => {
                     this.working = false
 
                     if (error.response.status == 422) {
                         this.errors = new Errors(error.response.data.errors)
+                        this.$toasted.show(this.__('There was a problem executing the action.'), { type: 'error' })
                     }
                 })
         },
