@@ -1,6 +1,6 @@
 # Nova Import
 
-### 💡 Suggestion: `Nova v3.10.0+ has ability to create "standalone" actions for running actions without selecting resources. you can create import action without using this package.`
+#### 💡 `Suggestion`: Nova v3.10.0+ has ability to create "standalone" actions for running actions without selecting resources. you can create import action without using this package. [Tutorial](https://github.com/anaseqal/nova-import/issues/26)
 
 Import data to resources.
 
