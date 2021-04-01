@@ -8,7 +8,8 @@
             class="btn btn-default btn-primary"
             :title="__('Run Import Action')"
         >
-            <span>{{ __('Import' + ' ' + resourceInformation.label) }}</span>
+            <span v-if="selectedAction.buttonText">{{ selectedAction.buttonText }}</span>
+            <span v-else>{{ __('Import' + ' ' + resourceInformation.label) }}</span>
         </button>
 
         <!-- Action Confirmation Modal -->
