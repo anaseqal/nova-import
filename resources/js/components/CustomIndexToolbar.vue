@@ -8,7 +8,7 @@
             class="btn btn-default btn-primary"
             :title="__('Run Import Action')"
         >
-            <span v-if="selectedAction.buttonText">{{ selectedAction.buttonText }}</span>
+            <span v-if="buttonText">{{ buttonText }}</span>
             <span v-else>{{ __('Import' + ' ' + resourceInformation.label) }}</span>
         </button>
 
@@ -224,6 +224,14 @@ export default {
                 }
             }
             return false
+        },
+
+        buttonText() {
+            for (let action of this.actions) {
+                if(action.uriKey == 'import-' + this.resourceName) {
+                    return action.buttonText;
+                }
+            }
         },
 
         selectedAction() {
