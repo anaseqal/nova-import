@@ -91,6 +91,13 @@ class Action implements JsonSerializable
     public static $chunkCount = 200;
 
     /**
+     * The text to be used for the action button.
+     *
+     * @var string
+     */
+    public $buttonText;
+
+    /**
      * The text to be used for the action's confirm button.
      *
      * @var string
@@ -432,6 +439,7 @@ class Action implements JsonSerializable
             'confirmButtonText' => __($this->confirmButtonText),
             'confirmText' => __($this->confirmText),
             'class' => $this->actionClass(),
+            'buttonText' => $this->buttonText,
         ], $this->meta());
     }
 }
