@@ -2,6 +2,7 @@
 
 namespace Anaseqal\NovaImport;
 
+use Illuminate\Http\Request;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
 
